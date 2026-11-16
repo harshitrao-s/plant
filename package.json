@@ -1,0 +1,41 @@
+{
+  "name": "mini-project-manager",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "next dev",
+    "dev:api": "node --watch --env-file-if-exists=.env server/index.js",
+    "build": "next build",
+    "start": "concurrently -n api,web -c cyan,magenta \"npm run start:api\" \"npm run start:web\"",
+    "start:web": "next start",
+    "start:api": "node --env-file-if-exists=.env server/index.js",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.14.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.12.1",
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-redux": "^9.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "4.3.3",
+    "concurrently": "^10.0.7",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "mongodb-memory-server": "^11.3.0",
+    "tailwindcss": "4.3.3"
+  }
+}
